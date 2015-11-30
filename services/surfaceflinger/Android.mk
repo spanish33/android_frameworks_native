@@ -106,11 +106,9 @@ LOCAL_SHARED_LIBRARIES := \
     libgui \
     libpowermanager
 
-LOCAL_WHOLE_STATIC_LIBRARIES += libexsurfaceflinger
-
-LOCAL_C_INCLUDES += $(ANDROID_BUILD_TOP)/vendor/qcom/opensource/display-frameworks/native/services/surfaceflinger/
-
 ifeq ($(TARGET_USES_QCOM_BSP), true)
+    LOCAL_WHOLE_STATIC_LIBRARIES += libexsurfaceflinger
+    LOCAL_C_INCLUDES += $(ANDROID_BUILD_TOP)/vendor/qcom/opensource/display-frameworks/native/services/surfaceflinger/
     LOCAL_C_INCLUDES += hardware/qcom/display/libgralloc
     LOCAL_C_INCLUDES += hardware/qcom/display/libqdutils
     LOCAL_C_INCLUDES += vendor/qcom/opensource/display-frameworks/include
